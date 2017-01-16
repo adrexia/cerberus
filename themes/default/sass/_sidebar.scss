@@ -1,0 +1,46 @@
+.sidebar {
+	float: left;
+	width: 100%;
+	background: rgba(#000, 0.5);
+	padding: 8px 10px;
+	margin-top: 25px;
+
+	&-inner {
+
+		padding: 20px;
+
+		position: relative;
+		z-index: 10;
+	}
+
+	h3 {
+		font-size: 1.7rem;
+	}
+
+
+	p {
+		font-size: 1em;
+	}
+
+	li {
+		padding-bottom: 0.7em;
+		line-height: 1.3em;
+		font-size: 0.8em;
+
+		a {
+			color: #fff;
+
+			&:hover,
+			&:focus {
+				
+			}
+		}
+	}
+
+	img {
+		&,
+		&.center {
+			margin: 0 1px 0 auto;
+		}
+	}
+}

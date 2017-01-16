@@ -9,7 +9,7 @@ global $database;
 if(defined('SS_DATABASE_NAME') && SS_DATABASE_NAME) {
 	$database = SS_DATABASE_NAME;
 } else {
-	$database = 'SS_chimera';
+	$database = 'SS_cerberus';
 }
 
 require_once('conf/ConfigureFromEnv.php');

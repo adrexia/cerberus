@@ -1,0 +1,40 @@
+
+.pull-right {
+	float:right;
+}
+
+.nonvisual-indicator, .sr-only { // Content often used by people using screenreaders
+	clip: rect(0 0 0 0);
+	height: 1px; width: 1px;
+	margin: -1px; padding: 0; border: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
+
+.divider {
+	margin: 0 auto 50px;
+	max-width: 475px;
+	border-top: 20px solid transparent;
+	text-align: center;
+	opacity: 0.5;
+	border: 1px solid rgba(#fff, 0.1);
+}
+
+.shaded {
+	background:darken($global-bg-color, 3%);
+	padding-bottom:20px;
+}
+
+
+.meta-info {
+	padding-left: 10px;
+	font-size: 15px;
+}
+
+.hidden-desktop {
+	@include hidden(desktop);
+}
+.hidden-mobile {
+	@include hidden(all-phones);
+}

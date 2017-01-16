@@ -1,0 +1,62 @@
+
+
+.header {
+	margin-top: 20px;
+	text-align: center;
+	color: #fff;
+	text-shadow: rgba(darken($air, 10%), 0.8) 0px 0px 20px;
+
+	h1 {
+		margin-bottom: 35px;
+	}
+
+	* {
+		color: #fff;
+	}
+
+	.btn {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		&.large {
+			margin-bottom: 50px;
+		}
+	}
+
+	.secondary-menu {
+		margin-bottom: 22px;
+		@include respond(all-phones) {
+			margin-bottom: 0;
+		}
+	}
+
+	.nav-list {
+		margin-bottom: 15px;
+		@include respond(all-phones) {
+			margin: 0 10px;
+		}
+		.btn {
+			margin-top: 0;
+			margin-bottom: 15px;
+			margin-right: 20px;
+			@include respond(all-phones) {
+				margin-right: 5px;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+.navbar {
+	margin-bottom: 0;
+
+	a.toggle {
+		line-height: 37px;
+		margin-top: 10px;
+		@include respond(all-phones) {
+			display: inline-block;
+		}
+	}
+	&.rounded{
+		@include border-radius(4px);
+	}
+}

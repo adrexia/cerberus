@@ -9,7 +9,6 @@ class HomePage extends Page {
 	);
 
 	private static $has_many = array(
-		'SliderItems' => 'SliderItem',
 		'NewsItems' => 'NewsItem',
 		'SponsorLinks' => 'Link'
 	);
@@ -39,18 +38,6 @@ class HomePage extends Page {
 		$gridField->setModelClass('NewsItem');
 		$fields->addFieldToTab('Root.News', $gridField);
 		$config->addComponent(new GridFieldOrderableRows());
-
-
-		// Carousel tab
-		$gridField = new GridField(
-			'SliderItems',
-			'Slider',
-			$this->SliderItems()->sort(array('Sort'=>'ASC','Archived'=>'ASC')),
-			$sliderConf =GridFieldConfig_RelationEditor::create());
-
-		$gridField->setModelClass('SliderItem');
-		$fields->addFieldToTab('Root.Slider', $gridField);
-		$sliderConf->addComponent(new GridFieldOrderableRows());
 
 		return $fields;
 	}

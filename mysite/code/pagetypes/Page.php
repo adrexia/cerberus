@@ -4,10 +4,44 @@ class Page extends SiteTree {
 	private static $icon = "mysite/images/sitetree_images/page.png";
 
 	private static $db = array(
+		'Intro' => 'Text',
+		'Colour' => 'Varchar(255)'
 	);
 
+
 	private static $has_one = array(
+		'SplashImage' => 'Image'
 	);
+
+
+	public function getCMSFields() {
+		$fields = parent::getCMSFields();
+
+		$fields->insertBefore(TextareaField::create('Intro', 'Intro'),'Content');
+
+		$fields->insertAfter(
+			ColorPaletteField::create(
+				"Colour", "Colour",
+				[
+					'air'=> '#D0C9BB',
+					'underworld'=> '#1C1F25',
+					'passion'=> '#F15051',
+					'sunlight'=>'#FFA600',
+					'earth'=> '#79c608',
+					'water'=> '#56ABCC',
+					'inspiration'=> '#783980',
+					'people'=> '#de347f',
+				]
+			), "Intro"
+		);
+
+
+		$fields->insertBefore($image = UploadField::create('SplashImage', 'Splash Image'),'Content');
+
+		$image->setFolderName('Uploads/Splash-Images');
+
+		return $fields;
+	}
 
 	public function getCurrentRegistration(){
 		$member = Member::currentUser();

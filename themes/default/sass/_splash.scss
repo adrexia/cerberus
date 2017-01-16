@@ -1,0 +1,186 @@
+.splash-overlay.cropped {
+	position: relative;
+	.splash,
+	.overlay {
+		min-height: 430px;
+	}
+
+	.page-header {
+		padding-bottom: 115px;
+	}
+
+	h1  {
+		margin-top: 100px;
+	}
+
+	@include respond(tablets) {
+		h1  {
+			font-size: 4rem;
+		}
+	}
+}
+
+
+
+.splash-overlay .page-header {
+	text-shadow: rgba(darken($air, 10%), 0.8) 0px 0px 20px;
+	text-align: center;
+
+	h1, p {
+		color: $global-bg-color;
+		text-align: center;
+	}
+}
+
+
+@include respond(all-phones) {
+	.splash-overlay {
+		position: relative;
+		.splash,
+		.overlay {
+			min-height: 675px;
+		}
+		.page-header {
+			padding-bottom: 28px;
+		}
+
+		h1 {
+			margin-bottom: 20px;
+			margin-top: 10px;
+			font-size: 2rem;
+		}
+		p.lead {
+			font-size: 1rem;
+		}
+	}
+}
+
+@include respond(tablets) {
+	.splash-overlay {
+		position: relative;
+		.splash,
+		.overlay {
+			min-height: 675px;
+		}
+		.page-header {
+			padding-bottom: 28px;
+		}
+
+		p.lead {
+			font-size: 1rem;
+			margin-bottom: 5px;
+			margin-top: 0;
+		}
+	}
+}
+
+.splash,
+.overlay {
+	min-height: 675px;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	top: 0;
+}
+
+.splash {
+	background-size: cover;
+	background-color: #000;
+}
+
+
+
+.overlay {
+	background: $air;
+	opacity: 0.8;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+	@include background-image (linear-gradient(top, darken( $air, 10%) 15%,  $air));
+
+	.fullheight & {
+		@include background-image (linear-gradient(top, darken( $air, 20%) 10%,  $air));
+	}
+
+	.earth & {
+		opacity: 0.7;
+	}
+
+	.underworld & {
+		opacity: 0.4;
+	}
+}
+
+
+
+.splash-overlay {
+	@for $i from 2 through $brand-num {
+		&.#{nth($brand-title, $i)} {
+			.overlay {
+				background: nth($brand-list, $i);
+				@include background-image (
+					linear-gradient(
+						top,
+						darken(nth($brand-list, $i), 10%) 10%,
+						nth($brand-list, $i)
+					)
+				);
+
+				.fullheight & {
+					@include background-image (linear-gradient(top, darken(nth($brand-list, $i), 20%) 10%, nth($brand-list, $i)));
+				}
+			}
+
+			&.night {
+				.overlay {
+					background: nth($brand-list, $i);
+					@include background-image (
+						linear-gradient(
+							top,
+							lighten(nth($brand-list, $i), 10%) 10%,
+							darken(nth($brand-list, $i), 40%)
+						)
+					);
+
+					.fullheight & {
+						@include background-image (linear-gradient(top, lighten(nth($brand-list, $i), 20%) 10%, darken(nth($brand-list, $i), 40%)));
+					}
+				}
+			}
+
+
+
+
+			.page-header {
+				text-shadow: rgba(darken(nth($brand-list, $i), 40%), 0.8) 0px 0px 30px;
+
+				h1, p {
+					color: #fff;
+				}
+			}
+
+			&.sunlight {
+				.page-header {
+					text-shadow: none;
+					h1, p {
+						color: $global-bg-color;
+					}
+				}
+			}
+
+
+			.btn {
+				&.active {
+					> a, a:visited, input, button, > span {
+						color: nth($brand-list, $i);
+						text-shadow: none;
+						&:hover,
+						&:focus {
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+	}
+}

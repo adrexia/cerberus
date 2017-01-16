@@ -24,6 +24,10 @@ RegistrationPage_Controller:
   extensions:
    - RegistrationPage_ControllerExtension
 
+Game:
+  extensions:
+   - GameExtension
+
 KickAssets:
   menu_icon: "mysite/images/sitetree_images/photo.png"
   menu_title: "Files"

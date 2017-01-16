@@ -1,0 +1,170 @@
+// Welcome to Gumby 2.0 Settings.
+// Happy Tinkering!
+$theme-name: 'default';
+$file-path: "../../../themes/"+$theme-name;
+
+$air: #D0C9BB;
+$underworld: #1C1F25;
+$passion: #CC2300;
+$sunlight: #FFA600;
+$earth: darken(#79c608,5%);
+$water: #56ABCC;
+$inspiration: #783980;
+$people: #de347f;
+
+$brand-list: $air, $underworld, $passion, $sunlight, $earth, $water,  $inspiration, $people;
+$secondary-brand-list: $brand-list;
+$brand-title: 'air', 'underworld', 'passion', 'sunlight', 'earth', 'water', 'inspiration', 'people';
+$brand-num: 8;
+
+
+$brand-list-contrast: rgba(#333, 0.1), rgba(darken($air, 40%), 0.1), rgba(darken($earth, 40%), 0.1), rgba(#000, 0.1), rgba(#000, 0.1), rgba(#fff, 0.2), rgba(#fff, 0.2);
+//
+// Grid Settings
+$row-max-width: 1200px !default;    				// 940px
+$gutter-in-px: 50px !default;      				// 20px
+$cols: 12 !default;              				// 12 Column Default Grid
+$hybrid: 16 !default;							// 16 Column Default Hybrid Grid
+
+// Responsiveness Settings
+$min-device-width: 320px; 						// iPhone Portrait
+$tablet-device-width: 768px;					// iPad Portrait
+$document-width: $row-max-width;				// Default Document
+$max-device-width: 2880px;						// Max Document Size
+
+// Spacing
+$nav-distance: 0px; 							// Navigation distance from the top of the viewport
+// Navigation
+$navcontain-height:  80px;
+
+// Typography
+$font-family: "Lato", helvetica, arial, sans-serif;
+$header-font-family: "Lato", helvetica, arial, sans-serif;
+
+$font-style-italic: italic;
+$icons: entypo;
+$font-smoothing: antialiased;
+
+// Font Weights
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-medium: 400;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+$font-weight-thin: 300;
+
+$header-font-weight: $font-weight-thin;
+$body-font-weight: $font-weight-thin;
+$type-font-weight: $font-weight-regular;
+$link-font-weight: $font-weight-regular;
+$button-font-weight: $font-weight-semibold;
+$tabs-font-weight: $font-weight-semibold;
+
+// Vertical Rhythm Spacing
+$base-line-height: 26px !default;
+$rhythm-spacing: .168;
+$rhythm-height: .711;
+
+// Modular Scale Settings
+// http://www.modularscale.com by Tim Brown
+// https://github.com/scottkellum/modular-scale
+$ms-ratio: $golden;						// Ratio for Modular Scale
+$base-font-size: 16px !default;
+$importantNum: 78px !default;
+$ms-base: $base-font-size $importantNum;
+// Gumby Default Scale Values: 16, 18, 26, 30, 42, 48, 68, 78, 110, 126;
+
+// Sizing
+$xsmall: ms(-2);
+$small: ms(-1) + 2;
+$norm: ms(0);	// $base-font-size (16px == default)
+$med: ms(1);
+$large: ms(2);
+$larger: ms(3);
+$xlarge: ms(4);
+$xxlarge: ms(5);
+$xxxlarge: ms(6);
+$reallybig: ms(8);
+$tremendous: ms(9);
+$absurd: ms(10);
+
+// Typography Colors
+$header-font-color: lighten(#272b33, 70%) !default;
+$header-link-color: $header-font-color !default;
+$header-link-hover-color: darken($header-font-color,10%) !default;
+$body-font-color: lighten(#272b33, 70%) !default;
+$body-link-color: mix($water, #fff, 80%) !default;
+$body-link-hover-color: $people !default;
+
+// User Interface Colors
+$global-bg-color: darken(#272b33, 5%); //#1F252B;//#231E1D; //#101015  //1b1b24 //#191b26
+$navbar-color: darken($global-bg-color, 5%);
+$navbar-link-color: $header-font-color;
+
+$primary-color: $water;
+$secondary-color: $air;
+$default-color: lighten($global-bg-color, 5%);
+$info-color: $inspiration;
+$danger-color: $passion;
+$warning-color: $sunlight;
+$success-color: $water;
+
+$primary-hover-color: lighten($primary-color, 5%);
+$secondary-hover-color: lighten($secondary-color, 5%);
+$default-hover-color: darken($default-color, 15%);
+$info-hover-color: lighten(mix($info-color, $secondary-color, 80%), 3%);
+$danger-hover-color: darken($danger-color, 5%);
+$warning-hover-color: darken($header-font-color,5%);
+$success-hover-color: darken($success-color, 5%);
+
+$horizontal-rule-color: $default-color !default;
+
+$black: #000;
+$white: #fff;
+
+// Borders
+$button-radius: 4px !default;
+$metro-radius: 0 !default;
+$bigger-radius: 8px;
+
+// Buttons
+// Font Sizing
+$xlarge-button-font-size: $larger;
+$large-button-font-size: $large;
+$medium-button-font-size: $norm;
+$small-button-font-size: $small;
+// Padding
+$default-button-padding: $med;
+// Height
+$default-button-height: 36px;
+
+// Tabs
+$tab-height: 42px;
+
+// Drawers & Modals
+$modal-overlay-color: rgba(0, 0, 0, 0.8);
+$modal-window-color: $white;
+$drawer-background-color: #3e4144;
+$drawer-inner-shadow-x-offset: 0;
+$drawer-inner-shadow-y-offset: 2px;
+$drawer-inner-shadow-blur: 5px;
+$drawer-inner-shadow-color: #313436;
+
+// Tables
+$table-bgcolor: #151211;
+$table-thead-bgcolor: darken($global-bg-color, 4%);
+$table-row-first-cell-font-weight: bold;
+$table-border-size: 1px;
+$table-border-style: solid;
+$table-border-color: lighten($global-bg-color, 10%);
+$table-cell-border-size: 1px;
+$table-cell-border-color: $table-border-color;
+$table-cell-border-style: solid;
+// .rounded
+$table-border-radius: 4px;
+// .striped
+$table-stripe-bgcolor: $global-bg-color;
+
+// Floats
+$default-float: left;
+$switch-float: right;
