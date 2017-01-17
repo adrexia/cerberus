@@ -15,6 +15,11 @@
 	}
   }
 
+  @include respond(mobile) {
+	  padding: 20px;
+  }
+
+
   &.fixed {
 	position: fixed;
 	z-index: 99999;
@@ -49,6 +54,10 @@ body #BetterNavigator {
 		  padding-bottom: 15px;
 		  font-size: 1.6em;
 
+		 @include respond(all-phones) {
+			 padding-bottom: 0;
+			 padding-top:15px;
+		 }
 
 		  &::first-letter {
 			  font-size: 1.1em;
@@ -61,7 +70,7 @@ body #BetterNavigator {
 	opacity: 1;
 	color: #fff;
 	text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
-	  
+
 	@include respond(all-phones) {
 		padding: 0;
 	}
@@ -102,7 +111,16 @@ body #BetterNavigator {
 		@include respond(all-phones) {
 			&.nav-first {
 				clear: both;
-				padding-left: 11px;
+			}
+		}
+
+		@include respond(mobile) {
+			padding: 0;
+			padding-right: 15px;
+
+			&.login {
+				padding-right: 0;
+				margin-top: -15px;
 			}
 		}
 		> a {
@@ -110,8 +128,13 @@ body #BetterNavigator {
 			padding-bottom: 14px;
 			@include respond(all-phones) {
 				padding: 10px 18px 7px;
-				font-size: 0.9em;
+				font-size: 12px;
 			}
+
+			@include respond(mobile) {
+				padding: 0;
+			}
+
 		}
 
 		&.login {
@@ -161,6 +184,10 @@ body #BetterNavigator {
   position: relative;
   background: darken($navbar-color, 15%);
   z-index: 1000;
+
+  @include respond(mobile) {
+	  background: none;
+  }
 }
 
 

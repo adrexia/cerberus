@@ -11,7 +11,8 @@ class LinkExtension extends DataExtension {
 
 	private static $has_one = array(
 		'Logo' => 'Image',
-		'Parent' => 'SiteTree'
+		'Parent' => 'SiteTree',
+		'Footer' => 'SiteConfig'
 	);
 
 	public function updateCMSFields(FieldList $fields) {

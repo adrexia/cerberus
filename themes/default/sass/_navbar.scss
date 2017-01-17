@@ -3,6 +3,10 @@
 	z-index: 3;
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 
+	.footer & {
+		min-height: 53px;
+	}
+
 	ul {
 		@include respond(desktop) {
 			padding-left: 80px;

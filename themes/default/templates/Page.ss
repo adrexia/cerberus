@@ -32,6 +32,8 @@
 		$Layout
 	</div>
 
+	<% include Footer %>
+
 	<script type="text/javascript" src="{$ThemeDir}/js/script.min.js"></script>
 
 	<% if SiteConfig.GACode %>
